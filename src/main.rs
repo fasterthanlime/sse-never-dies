@@ -24,7 +24,7 @@ async fn main() {
 
             loop {
                 println!("[{}] Sending...", pod.n);
-                sender.send("hello", "world", None).await;
+                sender.send("hello", "world", None).await?;
                 println!("[{}] Sent!", pod.n);
                 task::sleep(Duration::from_secs(1)).await;
             }
